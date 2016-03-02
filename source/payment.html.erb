@@ -4,3 +4,17 @@ title: Make a Payment
 
 <h1 style='text-align: center; color: #222;'>Cosmicvent Software Payments</h1>
 
+<form action="/payment/" method="POST">
+  <script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_l0OqGR2pA4g6G0"
+    data-amount="500"
+    data-name="Cosmicvent Software"
+    data-description="Payment X"
+    data-image="/images/cosmicvent-logo-optimized.png"
+    data-prefill.email="payments@cosmicvent.com"
+    data-theme.color="#F37254"
+  ></script>
+<input type="hidden" value="Hidden Element" name="hidden">
+</form>
+
