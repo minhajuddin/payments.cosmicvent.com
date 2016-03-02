@@ -1,2 +1,15 @@
 @charset "utf-8";
 @import "normalize";
+ body {
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+}
+form {
+  text-align: center;
+}
+input.razorpay-payment-button {
+  background-color: #2E7D32;
+  padding: 5px 10px;
+  color: white;
+  border: solid 2px #1B5E20;
+}
