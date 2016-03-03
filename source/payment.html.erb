@@ -4,17 +4,18 @@ title: Make a Payment
 
 <h1 style='text-align: center; color: #222;'>Cosmicvent Software Payments</h1>
 
-<form action="/payment/" method="POST">
-  <script
-    src="https://checkout.razorpay.com/v1/checkout.js"
-    data-key="rzp_live_QWpjLoRplrGOaD"
-    data-amount="500"
-    data-name="Cosmicvent Software"
-    data-description="Payment X"
-    data-image="/images/cosmicvent-logo-optimized.png"
-    data-prefill.email="payments@cosmicvent.com"
-    data-theme.color="#F37254"
-  ></script>
-<input type="hidden" value="Hidden Element" name="hidden">
-</form>
+<div id="out">
+</div>
 
+<script type="text/javascript" charset="utf-8" src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+<script type="text/javascript" charset="utf-8" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js'></script>
+<script id='tmpl' type="text/html" charset="utf-8">
+  <h1>Invoice {{ short_payment_id }} </h1>
+  <p><small>for</small> {{ customer_name }}</p>
+  <p>{{ description }}</p>
+  <p>Amount (INR): {{ amount }}</p>
+  <button id='rzp'>Pay Now</button>
+</script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<%= javascript_include_tag :all %>
